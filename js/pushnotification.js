@@ -63,7 +63,7 @@ var push = {
         var pushNotification = window.plugins.pushNotification;
         // TODO: Enter your own GCM Sender ID in the register call for Android
         if (device.platform == 'android' || device.platform == 'Android') {
-            pushNotification.register(this.successHandler, this.errorHandler, { "senderID": "1073233351812", "ecb": "push.onNotificationGCM" });
+            pushNotification.register(this.successHandler, this.errorHandler, { "senderID": "47322138800", "ecb": "push.onNotificationGCM" });
 
         }
         else {
