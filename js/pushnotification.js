@@ -60,6 +60,7 @@ var push = {
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
+        alert('inside received event');
         var pushNotification = window.plugins.pushNotification;
         // TODO: Enter your own GCM Sender ID in the register call for Android
         if (device.platform == 'android' || device.platform == 'Android') {
