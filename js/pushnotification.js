@@ -56,13 +56,14 @@ var push = {
     },
     // result contains any message sent from the plugin call
     successHandler: function (result) {
-        // alert('Success! Result = '+result)
+         alert('Success! Result = '+result)
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
-        alert('inside received event');
+       // alert('inside received event');
         var pushNotification = window.plugins.pushNotification;
         // TODO: Enter your own GCM Sender ID in the register call for Android
+        alert(device.platform);
         if (device.platform == 'android' || device.platform == 'Android') {
             pushNotification.register(this.successHandler, this.errorHandler, { "senderID": "47322138800", "ecb": "push.onNotificationGCM" });
 
