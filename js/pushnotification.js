@@ -63,7 +63,9 @@ var push = {
        // alert('inside received event');
         var pushNotification = window.plugins.pushNotification;
         // TODO: Enter your own GCM Sender ID in the register call for Android
-        alert(device.platform);
+        var deviceType = (navigator.userAgent.match(/iPad/i))  == "iPad" ? "iPad" : (navigator.userAgent.match(/iPhone/i))  == "iPhone" ? "iPhone" : (navigator.userAgent.match(/Android/i)) == "Android" ? "Android" : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+
+        alert(deviceType);
         if (device.platform == 'android' || device.platform == 'Android') {
             pushNotification.register(this.successHandler, this.errorHandler, { "senderID": "47322138800", "ecb": "push.onNotificationGCM" });
 
