@@ -40,6 +40,7 @@ var push = {
 
         $("body").niceScroll();
         push.receivedEvent('deviceready');
+        document.addEventListener("offline", onOffline, false);
 
     },
     tokenHandler: function (msg) {
@@ -138,3 +139,7 @@ var push = {
     }
 
 };
+function onOffline() {
+    alert('no internet connection found');
+navigator.app.exitApp();     
+}
