@@ -25,6 +25,7 @@
 
 <script type="text/javascript">
 		$(document).ready(function() {
+			$('.ui-loader').hide();
 			$('.qr_btn').click(function(){
 				console.log('scanning');
 				try {
@@ -32,11 +33,11 @@
 				   //alert(scanner)
 				   scanner.scan(
 				   function (result) {
-				  // alert("We got a barcode\n" +
+				   alert("We got a barcode\n" +result.text);
 				  // "Result: " + result.text);
 				   //"Format: " + result.format + "\n" +
 				   //"Cancelled: " + result.cancelled);
-				   window.open(result.text,'_system');
+				  // window.open(result.text,'_system');
 				   //window.location.href=result.text;
 				   }, 
 				   function (error) {
