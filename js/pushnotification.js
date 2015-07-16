@@ -21,6 +21,7 @@ var push = {
     initialize: function () {
         getLicenceData();
         this.bindEvents();
+        document.addEventListener("offline", onOffline, false);
 
     },
     // Bind Event Listeners
@@ -37,10 +38,10 @@ var push = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         $('.header-content .back').hide();
-
+        onOffline();
         $("body").niceScroll();
         push.receivedEvent('deviceready');
-        document.addEventListener("offline", onOffline, false);
+        
 
     },
     tokenHandler: function (msg) {
