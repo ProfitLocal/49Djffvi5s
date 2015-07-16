@@ -38,7 +38,8 @@ var push = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         $('.header-content .back').hide();
-        checkConnection();
+        document.addEventListener("online", onOnline, false); 
+        document.addEventListener("offline", onOffline, false); 
         $("body").niceScroll();
         push.receivedEvent('deviceready');
         
@@ -140,20 +141,9 @@ var push = {
     }
 
 };
-function checkConnection() {
-        var networkState = navigator.network.connection.type;
-
-        var states = {};
-        states[Connection.UNKNOWN]  = 'Unknown connection';
-        states[Connection.ETHERNET] = 'Ethernet connection';
-        states[Connection.WIFI]     = 'WiFi connection';
-        states[Connection.CELL_2G]  = 'Cell 2G connection';
-        states[Connection.CELL_3G]  = 'Cell 3G connection';
-        states[Connection.CELL_4G]  = 'Cell 4G connection';
-        states[Connection.NONE]     = 'No network connection';
-
-        alert('Connection type: ' + states[networkState]);
-        if(Connection.NONE){
-            navigator.app.exitApp(); 
-        }
-    }
+function onOnline() { 
+alert("yes-onOnline"); 
+} 
+function onOffline() { 
+alert("yes-onOffline"); 
+} 
