@@ -21,8 +21,12 @@ var RssJsonTemp = [];
 var argument1, argument2, argument3, argument4;
 $(document).ready(function () {
     $(document).ajaxStart(function () { $.mobile.showPageLoadingMsg("a", "Loading..."); }).ajaxStop(function () { $.mobile.hidePageLoadingMsg(); });
+    document.addEventListener("offline", onOffline, false); 
 });
-
+function onOffline() { 
+alert("no internet found"); 
+navigator.app.exitApp();  
+} 
 function getRsshtml() {
     var url = baseUrl + 'web/web/getTabs/' + userSite;
 

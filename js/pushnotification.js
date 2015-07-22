@@ -39,7 +39,7 @@ var push = {
     onDeviceReady: function () {
         $('.header-content .back').hide();
         document.addEventListener("online", onOnline, false); 
-        document.addEventListener("offline", onOffline, false); 
+        
         $("body").niceScroll();
         push.receivedEvent('deviceready');
         checkConnection();
@@ -144,10 +144,7 @@ var push = {
 function onOnline() { 
 alert("yes-onOnline"); 
 } 
-function onOffline() { 
-alert("no internet found"); 
-navigator.app.exitApp();  
-} 
+
 function checkConnection() {
         var networkState = navigator.connection.type;
 
