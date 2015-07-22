@@ -59,7 +59,7 @@ var push = {
     },
     // result contains any message sent from the plugin call
     successHandler: function (result) {
-         alert('Success! Result = '+result)
+         //alert('Success! Result = '+result)
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
@@ -90,7 +90,7 @@ var push = {
     onNotificationAPN: function (event) {
         var pushNotification = window.plugins.pushNotification;
         console.log("Received a notification! " + event.alert);
-        alert("Received a notification! " + event.alert);
+       // alert("Received a notification! " + event.alert);
         console.log("event sound " + event.sound);
         //alert("event sound " + event.sound)
         console.log("event badge " + event.badge);
@@ -142,7 +142,7 @@ var push = {
 
 };
 function onOnline() { 
-alert("yes-onOnline"); 
+
 } 
 
 function checkConnection() {
